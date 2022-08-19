@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: url('../img/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-350px);
+    }
+}
+
+.flag {
+    position: relative;
+    margin: 20px;
+    width: 300px;
+    height: 200px;
+    animation: up 30s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+.flag::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 30px;
+    background-color: #736e60;
+    width: 30px;
+    height: 3px;
+    opacity: 0.7;
+}
+
+.flag::after {
+    content: '';
+    position: absolute;
+    bottom: 30px;
+    left: -20px;
+    background-color: #736e60;
+    width: 30px;
+    height: 3px;
+    border-radius: 20%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+@keyframes wave {
+    0% {
+        top: 5%;
+    }
+
+    100% {
+        top: -5%;
+    }
+}
+
+.flag-element {
+    position: relative;
+    background: url('../img/flag.jpg');
+    background-size: 300px 100%;
+    width: 1px;
+    height: 100%;
+    display: inline-block;
+    animation: wave 1s ease-in-out infinite alternate;
+}
+
+.flag-pole {
+    background-color: #736e60;
+    width: 5px;
+    height: 90%;
+    border-radius: 20%;
+    opacity: 0.7;
+}
